@@ -29,14 +29,17 @@ jobs:
           subscription-id: b7e2d3dd-2fa8-4498-90b2-8ed4b08e15ee
 
       - name: Log in to ACR
+        shell: powershell
         run: |
           az acr login --name $ACR_NAME
 
       - name: Build Docker Image
+        shell: powershell
         run: |
           docker build -t $IMAGE_NAME:$IMAGE_TAG -f GetTasksTodoMicroservice/Dockerfile GetTasksTodoMicroservice
 
       - name: Tag Docker Image for ACR
+        shell: powershell
         run: |
           docker tag $IMAGE_NAME:$IMAGE_TAG $ACR_LOGIN_SERVER/$IMAGE_NAME:$IMAGE_TAG
 
