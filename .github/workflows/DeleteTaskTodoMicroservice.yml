@@ -30,6 +30,7 @@ jobs:
           subscription-id: b7e2d3dd-2fa8-4498-90b2-8ed4b08e15ee
 
       - name: Log in to ACR
+        shell: powershell
         run: |
           az acr login --name $ACR_NAME
 
