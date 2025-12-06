@@ -10,7 +10,10 @@ permissions:
 jobs:
   build-and-push:
     runs-on: self-hosted
-
+    
+    defaults:
+      run:
+        shell: bash
 
     env:
       IMAGE_NAME: todo-delete-tasks-api
