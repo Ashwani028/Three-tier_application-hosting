@@ -1,16 +1,15 @@
 name: Build and Push to ACR
 
 on:
-  workflow_dispatch:  # Isse tum manually GitHub se trigger kar sakte ho
+  workflow_dispatch:  # You can manually trigger this workflow
 
 permissions:
   id-token: write
   contents: read
-  
+
 jobs:
   build-and-push:
     runs-on: self-hosted
-    
 
     env:
       IMAGE_NAME: todo-delete-tasks-api
@@ -30,17 +29,21 @@ jobs:
           subscription-id: b7e2d3dd-2fa8-4498-90b2-8ed4b08e15ee
 
       - name: Log in to ACR
+        shell: bash
         run: |
           az acr login --name $ACR_NAME
 
       - name: Build Docker Image
+        shell: bash
         run: |
           docker build -t $IMAGE_NAME:$IMAGE_TAG -f DeleteTaskTodoMicroservice/Dockerfile DeleteTaskTodoMicroservice
 
       - name: Tag Docker Image for ACR
+        shell: bash
         run: |
           docker tag $IMAGE_NAME:$IMAGE_TAG $ACR_LOGIN_SERVER/$IMAGE_NAME:$IMAGE_TAG
 
       - name: Push Docker Image to ACR
+        shell: bash
         run: |
           docker push $ACR_LOGIN_SERVER/$IMAGE_NAME:$IMAGE_TAG
