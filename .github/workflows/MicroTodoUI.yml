@@ -14,7 +14,7 @@ jobs:
 
     env:
       IMAGE_NAME: micro-todo-ui-api
-      IMAGE_TAG: v3
+      IMAGE_TAG: v4
       ACR_NAME: acr028
       ACR_LOGIN_SERVER: acr028.azurecr.io
 
