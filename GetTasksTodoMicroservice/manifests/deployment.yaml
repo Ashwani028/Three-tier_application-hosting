@@ -16,7 +16,7 @@ spec:
       - name: todo-get-task-api
         image: acr028.azurecr.io/todo-get-tasks-api:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8000
         env: 
         - name: CONNECTION_STRING
           value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todo-0281.database.windows.net,1433;Database=sqldb-dev-todo-0281;Uid=devopsadmin;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
