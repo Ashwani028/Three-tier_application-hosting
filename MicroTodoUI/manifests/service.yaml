@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: todo-ui1
+  name: todo-ui
 spec:
   type: ClusterIP
   selector:
-    app: todo-ui1
+    app: todo-ui
   ports:
     - port: 80
       targetPort: 80
