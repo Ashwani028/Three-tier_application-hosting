@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-    - host: get-task-api.techno028.shop
+    - host: todogettask.techno028.shop
       http:
         paths:
           - pathType: Prefix
