@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-  - host: ui.techno028.shop
+  - host: todoui.techno028.shop
     http:
       paths:
       - pathType: Prefix
