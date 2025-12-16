@@ -9,6 +9,7 @@ spec:
       app: todo-ui
   template:
     metadata:
+      name: todo-ui
       labels:
         app: todo-ui
     spec:
