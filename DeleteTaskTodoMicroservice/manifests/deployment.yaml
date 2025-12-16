@@ -9,6 +9,7 @@ spec:
       app: todo-delete-tasks-api
   template:
     metadata:
+      name: todo-delete-tasks
       labels:
         app: todo-delete-tasks-api
     spec:
